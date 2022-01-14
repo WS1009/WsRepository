@@ -1,0 +1,3 @@
+include ':ws-library'
+include ':app'
+rootProject.name = "WsRepository"
