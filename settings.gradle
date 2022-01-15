@@ -1,4 +1,4 @@
-include ':view-library'
 include ':ws-library'
+include ':ui-library'
 include ':app'
 rootProject.name = "WsRepository"

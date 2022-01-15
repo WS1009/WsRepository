@@ -36,7 +36,7 @@ class ActivityAspect {
         )
     }
 
-    @Around("execution(@org.devio.hi.library.aspectj.MethodTrace * *(..))")
+    @Around("execution(@com.ws.lib.aspectj.MethodTrace * *(..))")
     fun methodTrace(joinPoint: ProceedingJoinPoint) {
         adviceCode(joinPoint)
     }

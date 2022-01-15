@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.ws.lib.cache.HiStorage
 import com.ws.lib.executor.HiExecutor
 import com.ws.lib.util.DPIUtil
-import com.ws.view.MatrixImageView
+import com.ws.ui.scroll.MatrixImageView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,8 +23,8 @@ class MainActivity : AppCompatActivity() {
             println("cache: $cache")
         })
 
-        val img3: MatrixImageView = findViewById(R.id.matrixImg)
-        img3.layoutParams = RelativeLayout.LayoutParams(
+        val img3: com.ws.ui.scroll.MatrixImageView = findViewById(R.id.matrixImg)
+        img3.layoutParams = LinearLayout.LayoutParams(
             DPIUtil.getWidthByDesignValue750(this, 100),
             DPIUtil.getWidthByDesignValue750(this, 100)
         )
