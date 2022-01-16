@@ -31,12 +31,11 @@ android {
         }
     }
 
-    repositories {
-        flatDir {
-            dirs 'libs'
-//            dirs project(':ws-library').file('libs')
-        }
-    }
+//    repositories {
+//        flatDir {
+//            dirs 'libs'
+//        }
+//    }
 }
 
 dependencies {
