@@ -6,6 +6,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Process;
 import android.view.View;
@@ -87,5 +88,53 @@ public class HiViewUtil {
             }
         }
         return false;
+    }
+
+
+    /**
+     * 获取已经显示的view的bitmap
+     *
+     * @param view
+     * @return
+     */
+    public static Bitmap getCacheBitmapFromView(View view) {
+        final boolean drawingCacheEnabled = true;
+        view.setDrawingCacheEnabled(drawingCacheEnabled);
+        view.buildDrawingCache(drawingCacheEnabled);
+        final Bitmap drawingCache = view.getDrawingCache();
+        Bitmap bitmap = null;
+        if (drawingCache != null) {
+            bitmap = Bitmap.createBitmap(drawingCache);
+            view.setDrawingCacheEnabled(false);
+        }
+        return bitmap;
+    }
+
+    /**
+     * 获取未显示的view的bitmap
+     *
+     * @param view
+     * @param width
+     * @param height
+     * @return
+     */
+    public static Bitmap getBitmapFromView(View view, int width, int height) {
+        layoutView(view, width, height);
+        return getCacheBitmapFromView(view);
+    }
+
+    /**
+     * 布局控件
+     *
+     * @param view
+     * @param width
+     * @param height
+     */
+    private static void layoutView(View view, int width, int height) {
+        view.layout(0, 0, width, height);
+        int measuredWidth = View.MeasureSpec.makeMeasureSpec(width, View.MeasureSpec.EXACTLY);
+        int measuredHeight = View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY);
+        view.measure(measuredWidth, measuredHeight);
+        view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
     }
 }

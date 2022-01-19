@@ -28,6 +28,5 @@ class MainActivity : AppCompatActivity() {
             DPIUtil.getWidthByDesignValue750(this, 100),
             DPIUtil.getWidthByDesignValue750(this, 100)
         )
-
     }
 }

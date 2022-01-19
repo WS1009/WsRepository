@@ -68,11 +68,17 @@ public class HiLog {
     }
 
     public static void log(@HiLogType.TYPE int type, Object... contents) {
-        log(type, HiLogManager.getInstance().getConfig().getGlobalTag(), contents);
+        HiLogManager hiLogManager = HiLogManager.getInstance();
+        if (hiLogManager != null) {
+            log(type, hiLogManager.getConfig().getGlobalTag(), contents);
+        }
     }
 
     public static void log(@HiLogType.TYPE int type, @NonNull String tag, Object... contents) {
-        log(HiLogManager.getInstance().getConfig(), type, tag, contents);
+        HiLogManager hiLogManager = HiLogManager.getInstance();
+        if (hiLogManager != null) {
+            log(hiLogManager.getConfig(), type, tag, contents);
+        }
     }
 
     public static void log(@NonNull HiLogConfig config, @HiLogType.TYPE int type, @NonNull String tag, Object... contents) {
