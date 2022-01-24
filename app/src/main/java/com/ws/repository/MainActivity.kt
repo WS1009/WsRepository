@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             println("cache: $cache")
         })
 
-        val img3: com.ws.ui.scroll.MatrixImageView = findViewById(R.id.matrixImg)
+        val img3: MatrixImageView = findViewById(R.id.matrixImg)
         img3.layoutParams = LinearLayout.LayoutParams(
             DPIUtil.getWidthByDesignValue750(this, 100),
             DPIUtil.getWidthByDesignValue750(this, 100)
