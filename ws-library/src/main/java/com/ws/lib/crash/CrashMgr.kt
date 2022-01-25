@@ -1,6 +1,8 @@
 package com.ws.lib.crash
 
-
+/**
+ * 崩溃日志信息
+ */
 object CrashMgr {
 //    private const val CRASH_DIR_JAVA = "java_crash"
 //    private const val CRASH_DIR_NATIVE = "native_crash"
