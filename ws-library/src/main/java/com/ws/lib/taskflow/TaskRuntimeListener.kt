@@ -2,7 +2,7 @@ package com.ws.lib.taskflow
 
 import android.util.Log
 import com.ws.lib.BuildConfig
-import com.ws.lib.flow.TaskRuntime.getTaskRuntimeInfo
+import com.ws.lib.taskflow.TaskRuntime.getTaskRuntimeInfo
 import java.lang.StringBuilder
 
 class TaskRuntimeListener : TaskListener {
