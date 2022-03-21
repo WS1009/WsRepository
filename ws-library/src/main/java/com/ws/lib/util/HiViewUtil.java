@@ -7,8 +7,11 @@ import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.os.Build;
 import android.os.Process;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -136,5 +139,39 @@ public class HiViewUtil {
         int measuredHeight = View.MeasureSpec.makeMeasureSpec(height, View.MeasureSpec.EXACTLY);
         view.measure(measuredWidth, measuredHeight);
         view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+    }
+
+    /**
+     * 获取文本的宽度
+     *
+     * @param textSize px
+     * @param text
+     * @return
+     */
+    private static int getTextWidth(int textSize, String text) {
+        if (TextUtils.isEmpty(text)) {
+            return 0;
+        }
+        Paint paint = new Paint();
+        paint.setTextSize(textSize);
+        return (int) paint.measureText(text);
+    }
+
+    /**
+     * 获取文本最先宽度（不包含安全区域）
+     *
+     * @param textSize
+     * @param text
+     * @return
+     */
+    private static int getTextMinWidth(int textSize, String text) {
+        if (TextUtils.isEmpty(text)) {
+            return 0;
+        }
+        Paint paint = new Paint();
+        paint.setTextSize(textSize);
+        Rect minRect = new Rect();
+        paint.getTextBounds(text, 0, text.length(), minRect);
+        return minRect.width();
     }
 }
