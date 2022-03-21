@@ -1,6 +1,5 @@
 package com.ws.lib.restful
 
-import android.util.Log
 import com.ws.lib.cache.HiStorage
 import com.ws.lib.executor.HiExecutor
 import com.ws.lib.log.HiLog

@@ -95,6 +95,8 @@ class MethodParser(
                 val key = annotation.value
                 val value = args[index]
                 parameters[key] = value.toString()
+            } else if (annotation is Url) {
+                domainUrl = value as String
             } else if (annotation is Path) {
                 val replaceName = annotation.value
                 val replacement = value.toString()

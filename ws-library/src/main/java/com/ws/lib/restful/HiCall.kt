@@ -11,7 +11,6 @@ interface HiCall<T>{
 
 
     interface Factory{
-
         fun newCall(request:HiRequest):HiCall<*>
     }
 }

@@ -17,7 +17,7 @@ class EmptyView : LinearLayout {
     private var title: TextView
     private var icon: TextView
     private var desc: TextView
-    private var button: Button
+//    private var button: Button
 
     constructor(context: Context) : this(context, null)
 
@@ -34,11 +34,10 @@ class EmptyView : LinearLayout {
 
         LayoutInflater.from(context).inflate(R.layout.layout_empty_view, this, true)
 
-
         icon = findViewById(R.id.empty_icon)
         title = findViewById(R.id.empty_title)
         desc = findViewById(R.id.empty_text)
-        button = findViewById(R.id.empty_action)
+//        button = findViewById(R.id.empty_action)
 
 
     }
@@ -70,12 +69,12 @@ class EmptyView : LinearLayout {
 
 
     fun setButton(text: String, listener: OnClickListener) {
-        if (TextUtils.isEmpty(text)) {
-            button.visibility = View.GONE
-        } else {
-            button.visibility = View.VISIBLE
-            button.text = text
-            button.setOnClickListener(listener)
-        }
+//        if (TextUtils.isEmpty(text)) {
+//            button.visibility = View.GONE
+//        } else {
+//            button.visibility = View.VISIBLE
+//            button.text = text
+//            button.setOnClickListener(listener)
+//        }
     }
 }

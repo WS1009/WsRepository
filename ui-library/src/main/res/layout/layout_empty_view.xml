@@ -58,16 +58,16 @@
             tools:visibility="visible"/>
     </LinearLayout>
 
-    <com.google.android.material.button.MaterialButton xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/empty_action"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="刷新"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:visibility="gone"
-        app:backgroundTint="@color/color_dd2"
-        app:cornerRadius="8dp"
-        tools:visibility="visible"/>
+<!--    <com.google.android.material.button.MaterialButton xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        android:id="@+id/empty_action"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:text="刷新"-->
+<!--        android:textColor="@android:color/white"-->
+<!--        android:textSize="16sp"-->
+<!--        android:visibility="gone"-->
+<!--        app:backgroundTint="@color/color_dd2"-->
+<!--        app:cornerRadius="8dp"-->
+<!--        tools:visibility="visible"/>-->
 </LinearLayout>
